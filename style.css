@@ -5,57 +5,403 @@ h3,
 h4,
 h5,
 h6 {
-    font-family: "Montserrat", sans-serif
+  font-family: "Montserrat", sans-serif;
 }
 
 .w3-row-padding img {
-    margin-bottom: 30px
+  margin-bottom: 30px;
 }
 
 /* Set the width of the sidebar to 120px */
 .w3-sidebar {
-    width: 120px;
-    background: #000000;
+  width: 120px;
+  background: #000000;
 }
 
 /* Add a left margin to the "page content" that matches the width of the sidebar (120px) */
 #main {
-    margin-left: 120px
+  margin-left: 120px;
 }
 
 /* Remove margins from "page content" on small screens */
 @media only screen and (max-width: 600px) {
-    #main {
-        margin-left: 0
-    }
+  #main {
+    margin-left: 0;
+  }
 }
 
-#app{
-    text-align:center;
-    font-size:30px;
-    background-image: linear-gradient(
-      -225deg,
-      #ffffff 0%,
-      #ffffff 29%,
-      #ffffff 67%,
-      #ffffff 100%
-    );
-    background-clip:border-box;
-     text-fill-color: transparent;
-    background-clip:text;
-    -webkit-background-clip:text;
-    -webkit-text-fill-color: transparent;
-    text-fill-color: transparent;
-    animation: textclip 2s linear infinite;
-  }
-  
-  @keyframes textclip {
-    to {
-      background-position: 200% center;
-    }
-  }
+#app {
+  text-align: center;
+  font-size: 30px;
+  background-image: linear-gradient(
+    -225deg,
+    #ffffff 0%,
+    #ffffff 29%,
+    #ffffff 67%,
+    #ffffff 100%
+  );
+  background-clip: border-box;
+  text-fill-color: transparent;
+  background-clip: text;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  text-fill-color: transparent;
+  animation: textclip 2s linear infinite;
+}
 
-  #gambar1{
-    animation-delay: 0.1s;
+@keyframes textclip {
+  to {
+    background-position: 200% center;
   }
-  
+}
+
+#gambar1 {
+  animation-delay: 0.1s;
+}
+
+body,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-family: "Montserrat", sans-serif;
+}
+
+.w3-row-padding img {
+  margin-bottom: 30px;
+}
+
+/* Set the width of the sidebar to 120px */
+.w3-sidebar {
+  width: 120px;
+  background: #000000;
+}
+
+/* Add a left margin to the "page content" that matches the width of the sidebar (120px) */
+#main {
+  margin-left: 120px;
+}
+
+/* Remove margins from "page content" on small screens */
+@media only screen and (max-width: 600px) {
+  #main {
+    margin-left: 0;
+  }
+}
+
+/* Gaya default untuk mode gelap */
+#app,
+#app * {
+  color: white !important;
+}
+
+/* Gaya untuk mode terang */
+.light-mode #app,
+.light-mode #app * {
+  color: black !important;
+}
+
+@keyframes textclip {
+  to {
+    background-position: 200% center;
+  }
+}
+
+#gambar1 {
+  animation-delay: 0.1s;
+}
+
+:root {
+  --bg-color: #000000;
+  --text-color: #ffffff;
+  --sidebar-color: #000000;
+  --button-bg: #000000;
+  --button-text: #ffffff;
+  --hover-color: #ffffff;
+}
+
+body {
+  background-color: var(--bg-color);
+  color: var(--text-color);
+  transition: background-color 0.3s, color 0.3s;
+}
+
+.w3-sidebar {
+  background-color: var(--sidebar-color);
+}
+
+.w3-button {
+  background-color: var(--button-bg) !important;
+  color: var(--button-text) !important;
+}
+
+.w3-button:hover {
+  background-color: var(--hover-color) !important;
+  color: var(--button-bg) !important;
+}
+
+#themeToggle {
+  position: fixed;
+  top: 20px;
+  right: 20px;
+  z-index: 1000;
+  padding: 10px;
+  border-radius: 50%;
+  border: none;
+  cursor: pointer;
+  font-size: 20px;
+}
+
+/* Gaya khusus untuk mode terang */
+.light-mode {
+  --bg-color: #f1f1f1;
+  --text-color: #000000;
+  --sidebar-color: #e0e0e0;
+  --button-bg: #ffffff;
+  --button-text: #000000;
+  --hover-color: #000000;
+}
+
+/* Sesuaikan gaya lain yang perlu diubah saat pergantian tema */
+.light-mode .w3-black {
+  background-color: #ffffff !important;
+  color: #000000 !important;
+}
+
+.light-mode .w3-dark-grey {
+  background-color: #757575 !important;
+}
+
+/* Animasi untuk transisi yang lebih halus */
+* {
+  transition: background-color 0.3s, color 0.3s;
+}
+
+@media (prefers-color-scheme: light) {
+  #home {
+    color: black; /* Warna teks untuk mode terang */
+  }
+}
+
+@media (prefers-color-scheme: dark) {
+  #home {
+    color: white; /* Warna teks untuk mode gelap */
+  }
+}
+
+/* Gaya default untuk mode gelap */
+body {
+  background-color: var(--bg-color);
+  color: var(--text-color);
+}
+
+/* Variabel CSS untuk warna */
+:root {
+  --bg-color: #000000;
+  --text-color: #ffffff;
+  --sidebar-color: #000000;
+  --button-bg: #000000;
+  --button-text: #ffffff;
+  --hover-color: #ffffff;
+}
+
+/* Atur warna untuk mode terang */
+.light-mode {
+  --bg-color: #f1f1f1;
+  --text-color: #000000;
+  --sidebar-color: #e0e0e0;
+  --button-bg: #ffffff;
+  --button-text: #000000;
+  --hover-color: #000000;
+}
+
+/* Atur warna teks untuk semua elemen dalam mode terang */
+.light-mode * {
+  color: var(--text-color);
+}
+
+/* Pengecualian untuk elemen tertentu yang mungkin perlu warna berbeda */
+.light-mode .w3-bar-item:hover,
+.light-mode .w3-button:hover {
+  color: var(--hover-color) !important;
+  background-color: var(--text-color) !important;
+}
+
+/* Atur warna ikon */
+.light-mode .fa {
+  color: var(--text-color);
+}
+
+/* Atur warna teks untuk elemen spesifik jika diperlukan */
+.light-mode .w3-text-grey {
+  color: #757575 !important;
+}
+
+.light-mode .w3-text-light-grey {
+  color: #4a4a4a !important;
+}
+
+.dynamic-icon {
+  color: white;
+}
+
+/* Gaya untuk mode terang */
+.light-mode .dynamic-icon {
+  color: black;
+}
+
+/* Gaya default untuk mode gelap */
+.dynamic-text {
+  color: white;
+}
+
+/* Gaya untuk mode terang */
+.light-mode .dynamic-text {
+  color: black;
+}
+.light-text {
+  color: black;
+}
+
+.dark-text {
+  color: white;
+}
+/* Gaya default untuk mode gelap */
+.dynamic-hr {
+  border-color: rgba(255, 255, 255, 0.5); /* Warna putih dengan opacity */
+}
+
+/* Gaya untuk mode terang */
+.light-mode .dynamic-hr {
+  border-color: rgba(0, 0, 0, 0.5); /* Warna hitam dengan opacity */
+}
+
+/* Gaya default untuk mode gelap */
+.dynamic-navbar {
+  background-color: #000000;
+}
+
+.dynamic-nav-item {
+  background-color: #000000;
+  color: #ffffff;
+}
+
+/* Gaya untuk mode terang */
+.light-mode .dynamic-navbar {
+  background-color: #ffffff;
+}
+
+.light-mode .dynamic-nav-item {
+  background-color: #ffffff;
+  color: #000000;
+}
+
+/* Hover effect */
+.dynamic-nav-item:hover {
+  background-color: #f1f1f1 !important;
+  color: #000000 !important;
+}
+
+.light-mode .dynamic-nav-item:hover {
+  background-color: #e0e0e0 !important;
+  color: #000000 !important;
+}
+
+/* Warna ikon */
+.dynamic-nav-item i {
+  color: inherit;
+}
+
+/* Gaya default untuk mode gelap */
+.dynamic-button {
+  background-color: #333333;
+  color: #ffffff;
+  border: none;
+  transition: background-color 0.3s, color 0.3s;
+}
+
+.dynamic-button-link {
+  color: inherit;
+  text-decoration: none;
+}
+
+.dynamic-button:hover {
+  background-color: #e0e0e0;
+}
+
+/* Gaya untuk mode terang */
+.light-mode .dynamic-button {
+  background-color: #000000;
+  color: #ffffff;
+  border: 1px solid #000000;
+}
+
+.light-mode .dynamic-button:hover {
+  background-color: #333333;
+}
+
+/* Gaya default untuk mode gelap */
+.dynamic-button {
+  background-color: white;
+  color: black;
+  border: 2px solid white;
+  transition: background-color 0.3s, color 0.3s, border-color 0.3s;
+}
+
+.dynamic-button-link {
+  color: inherit;
+  text-decoration: none;
+}
+
+.dynamic-button:hover {
+  background-color: #f0f0f0;
+  color: black;
+}
+
+/* Gaya untuk mode terang */
+.light-mode .dynamic-button {
+  background-color: black;
+  color: white;
+  border: 2px solid black;
+}
+
+.light-mode .dynamic-button:hover {
+  background-color: #333;
+  color: white;
+}
+
+/* Gaya default untuk mode gelap */
+.dynamic-hr {
+  border-color: rgba(255, 255, 255, 0.5); /* Warna putih dengan opacity */
+}
+
+/* Gaya untuk mode terang */
+.light-mode .dynamic-hr {
+  border-color: rgba(0, 0, 0, 0.5); /* Warna hitam dengan opacity */
+}
+
+/* Gaya default untuk mode gelap */
+.dynamic-text {
+  color: white;
+}
+
+/* Gaya untuk mode terang */
+.light-mode .dynamic-text {
+  color: black;
+}
+
+.light-mode .w3-text-light-grey {
+  color: #4a4a4a !important;
+}
+
+.light-mode .w3-text-grey {
+  color: #757575 !important;
+}
+
+body,
+.dynamic-text,
+.dynamic-nav-item {
+  transition: background-color 0.3s, color 0.3s;
+}
