@@ -149,12 +149,13 @@
             <!-- End Contact Section -->
         </div>
         <center>
-            <!-- <audio id="myAudio" autoplay controls loop>
+            <audio id="myAudio" autoplay controls loop>
                 <source src="audio/videoplayback.m4a" type="audio/mpeg">
                 Your browser does not support the audio element.
-              </audio> -->
+              </audio>
         </center>
  
+
         <!-- Footer -->
         <footer class="w3-content w3-padding-64 w3-text-grey w3-xlarge w3-center">
             <div class="right">
@@ -227,15 +228,29 @@ typewriter.typeString('Web Developer')
  
  
 const myAudio = document.getElementById('myAudio');
- 
-// Fungsi untuk autoplay audio setelah 10 detik
-function autoplayAudio() {
-  setTimeout(function() {
-    myAudio.play();
-  }, 10000); // 10 detik (10,000 milidetik)
+
+// Function to play audio
+function playAudio() {
+    myAudio.play().catch(error => {
+        console.log("Auto-play was prevented. Please interact with the page to play audio.");
+    });
 }
- 
-autoplayAudio();
+
+// Try to play audio after a short delay
+setTimeout(playAudio, 1000);
+
+// Play audio on first user interaction
+document.addEventListener('click', function audioHandler() {
+    playAudio();
+    document.removeEventListener('click', audioHandler);
+}, { once: true });
+
+// Alternatively, try to play on scroll
+window.addEventListener('scroll', function audioScrollHandler() {
+    playAudio();
+    window.removeEventListener('scroll', audioScrollHandler);
+}, { once: true });
+
  
  
 const text = "Hello Every One, Welcome to my Biography. I am 24 Years Old. Im Fresh Graduate In University Diponogoro In The Semarang Area You Can Get to Know me, On The Social Media listed below. My Current activity is Learning Programing and Creating Content Programing and Gaming. I have Account You Tube, You Can See My Content In Sidebar."; // Your text here
